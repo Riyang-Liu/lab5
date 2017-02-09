@@ -8,9 +8,22 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
+
+ $(document).ready(function() {
+ 	initializePage();
+ 	$(".click").click(function(event) {
+ 		event.preventDefault();
+ 		var name = $(this).first().text();
+ 		var newName = anagrammedName(name);
+ 		$(this).first().text(newName);
+
+ 	});
+ })
+
 function initializePage() {
 	console.log("Javascript connected!");
 }
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
